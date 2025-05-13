@@ -1,0 +1,46 @@
+Procedure inputArray(Output A, Output n)
+    Print "Masukkan banyaknya elemen : "
+    Read n
+    Initialize A as empty list
+    Print "Masukkan elemen array : "
+    For i ← 0 to n - 1 do
+        Read element
+        Append element to A
+    End For
+End Procedure
+
+Procedure linearSearch(Input A, Input target)
+    Initialize indices as empty list
+    Initialize count ← 0
+
+    For i ← 0 to length(A) - 1 do
+        If A[i] = target then
+            Append i to indices
+            count ← count + 1
+        End If
+    End For
+
+    If count > 0 then
+        Print "Angka", target, "muncul", count, "kali."
+        Print "Muncul pada indeks ke : "
+        For each index in indices do
+            Print index
+        End For
+    Else
+        Print "Angka", target, "tidak ditemukan pada array."
+    End If
+End Procedure
+
+// Main Program
+Start
+    Declare A as list of integers
+    Declare n, target as integers
+
+    Call inputArray(A, n)
+
+    Print "Masukkan angka untuk dicari : "
+    Read target
+
+    Call linearSearch(A, target)
+    
+End
